@@ -1,16 +1,37 @@
-//var state = prompt();
+// var numOne = document.getElementById("num-one");
+// var numTwo = document.getElementById("num-two");
+// var addSum = document.getElementById("add-sum");
 
-//function add(first, second) {
-	//if (state > 16) {return first+second;}
-	//else {return first+second+second;}
-//}
+// numOne.addEventListener("input", add);
+// numTwo.addEventListener("input", add);
 
-//alert(add(1,2));
+// function add() {
+// 	var one = parseFloat(numOne.value) || 0;
+// 	var two = parseFloat(numTwo.value) || 0;
+// 	sum = one+two;
+// 	addSum.innerHTML = "Total: "+sum;
+// }
 
-//var myList = ['apples', 'oranges', 'banans'];
+var thrall = document.getElementById("thrall");
+var sylvanas = document.getElementById("sylvanas");
+var odyn = document.getElementById("odyn");
 
-var myList = ['apples', 'oranges', 'bananas'];
+thrall.addEventListener("click", picLink);
+sylvanas.addEventListener("click", picLink);
+odyn.addEventListener("click", picLink);
 
-for (var i=0; i < myList.length; i++) {
-  alert('you have '+myList[i]+' in your basket.')
+function picLink() {
+	var allImages = document.querySelectorAll("img");
+	for (var i = 0; i < allImages.length; i++) {
+		allImages[i].className = "hide";
+	}
+	var picId = this.attributes["data-img"].value;
+	var pic = document.getElementById(picId);
+	if (pic.className === "hide") {
+		pic.className = "";
+	} else {
+		pic.className = "hide";
+	}
 }
+
+
